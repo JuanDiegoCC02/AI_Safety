@@ -1,0 +1,48 @@
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+db.sqlite3
+*.log
+
+# Migrations cache
+*/migrations/__pycache__/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Environment Variables
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# HuggingFace Cache
+.cache/
+huggingface/
+
+# Torch
+torch_cache/
+
+# Local settings
+local_settings.py
