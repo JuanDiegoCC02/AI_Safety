@@ -4,6 +4,12 @@ An AI-powered content moderation and text evaluation platform built with Django 
 
 The system is designed to analyze user-generated content, detect harmful language, evaluate toxicity levels, assess risk severity, and support automated moderation workflows through a scalable REST API architecture.
 
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Django](https://img.shields.io/badge/Django-REST_Framework-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+![Swagger](https://img.shields.io/badge/OpenAPI-Swagger-success)
+![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)
+
 ---
 
 ## 🚀 Overview
