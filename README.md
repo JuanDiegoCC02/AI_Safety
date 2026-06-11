@@ -1,56 +1,75 @@
-# 🚀 AI Content Moderation & Text Evaluation API
+# 🛡️ AI Safety Backend
 
-A production-oriented backend application built with **Django REST Framework**, **PostgreSQL**, and **Natural Language Processing (NLP)** technologies to evaluate text quality, detect harmful content, classify risk levels, and generate moderation insights through a RESTful API.
+An AI-powered content moderation and text evaluation platform built with Django REST Framework, PostgreSQL, and Natural Language Processing (NLP) technologies.
 
-This platform combines grammar analysis, semantic similarity, toxicity detection, and automated risk assessment to support modern content moderation workflows.
+The system is designed to analyze user-generated content, detect harmful language, evaluate toxicity levels, assess risk severity, and support automated moderation workflows through a scalable REST API architecture.
 
 ---
 
-## ✨ Features
+## 🚀 Overview
 
-### 📝 Text Evaluation
+AI Safety Backend combines machine learning inference, NLP techniques, and rule-based decision systems to provide:
 
-* Grammar analysis using LanguageTool
-* Semantic similarity evaluation using Sentence Transformers
-* Automated scoring engine
-* Quality classification:
+* Content moderation
+* Toxicity analysis
+* Threat detection
+* Risk assessment
+* Incident reporting
+* Text evaluation services
 
-  * 🟢 Excellent
-  * 🔵 Good
-  * 🟡 Average
-  * 🔴 Poor
+The project follows a service-oriented architecture to ensure maintainability, scalability, and separation of concerns.
 
-### 🛡️ Content Moderation
+---
+
+## ✨ Core Features
+
+### 🧠 Content Moderation
 
 * Toxicity Detection
 * Threat Detection
 * Severe Toxicity Analysis
-* Obscene Content Detection
+* Obscene Language Detection
 * Insult Detection
 * Identity Attack Detection
 
 ### ⚠️ Risk Assessment Engine
 
-* Automated risk classification
-* Multi-factor scoring system
+Automatically classifies content into:
+
+| Level       | Description                 |
+| ----------- | --------------------------- |
+| 🟢 LOW      | Safe content                |
+| 🟡 MEDIUM   | Potentially harmful content |
+| 🟠 HIGH     | Dangerous content           |
+| 🔴 CRITICAL | Severe threat detected      |
+
+Additional capabilities:
+
 * Moderation decisions
-* Incident report generation
+* Automated blocking logic
+* Incident reporting triggers
+* Risk explanations
 
-Risk Levels:
+### 📊 Text Evaluation
 
-| Level       | Description                        |
-| ----------- | ---------------------------------- |
-| 🟢 LOW      | Safe content                       |
-| 🟡 MEDIUM   | Potentially harmful content        |
-| 🟠 HIGH     | Dangerous content requiring review |
-| 🔴 CRITICAL | Severe threat detected             |
+* Grammar Analysis
+* Semantic Similarity Evaluation
+* Quality Scoring
+* Response Classification
+
+Evaluation Labels:
+
+* Excellent
+* Good
+* Average
+* Poor
 
 ### 💾 Data Persistence
 
-* PostgreSQL integration
-* Evaluation history storage
-* Moderation records
-* Statistical analytics
+* PostgreSQL Integration
+* Evaluation History Storage
+* Moderation Records
+* Analytics Support
 
 ### 📚 API Documentation
 
@@ -60,83 +79,90 @@ Risk Levels:
 
 ---
 
-## 🏗️ Technology Stack
+## 🏗️ Architecture
+
+The project follows a modular service-layer architecture.
+
+```text
+AISAFETY_BACKEND
+│
+├── config/
+│
+├── moderation/
+│   ├── services/
+│   │   ├── classifier.py
+│   │   ├── toxicity_service.py
+│   │   ├── risk_service.py
+│   │   ├── decision_engine.py
+│   │   └── reports.py
+│   │
+│   ├── tests/
+│   │   └── test_classifier.py
+│   │
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   └── urls.py
+│
+└── manage.py
+```
+
+---
+
+## 🔧 Service Layer Responsibilities
+
+### classifier.py
+
+Machine Learning classification layer responsible for generating content analysis scores.
+
+### toxicity_service.py
+
+Handles toxicity-related processing and score extraction.
+
+### risk_service.py
+
+Evaluates risk levels based on NLP model outputs and moderation rules.
+
+### decision_engine.py
+
+Central orchestration layer responsible for moderation workflow execution.
+
+### reports.py
+
+Generates moderation reports and incident records.
+
+---
+
+## 🛠️ Technology Stack
 
 ### Backend
 
-* Python
+* Python 3
 * Django
 * Django REST Framework
 * PostgreSQL
 
-### 🤖 Artificial Intelligence & NLP
+### Artificial Intelligence & NLP
 
-* LanguageTool
 * Sentence Transformers
+* LanguageTool
 * Cosine Similarity
 * Machine Learning Classification Models
 
-### 📖 Documentation
+### API Documentation
 
 * drf-spectacular
 * Swagger UI
 * ReDoc
 
-### 🧪 Testing
+### Testing
 
 * Django Test Framework
-* Automated API Testing
+* Automated Unit Testing
 
 ---
 
-## 🏛️ Architecture
-
-```text
-Client
-   │
-   ▼
-Django REST API
-   │
-   ├── Views
-   ├── Serializers
-   ├── Services Layer
-   │      ├── Evaluation Engine
-   │      ├── Toxicity Classifier
-   │      ├── Risk Assessment Engine
-   │      └── Incident Reporting
-   │
-   └── PostgreSQL Database
-```
-
-The application follows a **service-oriented architecture**, promoting separation of concerns, maintainability, scalability, and testability.
-
----
-
-## 🔥 Core Capabilities
-
-### 📊 Evaluation Module
-
-Analyze textual responses and generate:
-
-* Grammar Score
-* Semantic Relevance Score
-* Final Evaluation Score
-* Quality Classification
-* Processing Metrics
-
-### 🛡️ Moderation Module
-
-Analyze user-generated content and generate:
-
-* Toxicity Metrics
-* Threat Indicators
-* Risk Classification
-* Moderation Decisions
-* Incident Reports
-
----
-
-## 📡 Example Response
+## 🔥 Example Moderation Response
 
 ```json
 {
@@ -151,13 +177,37 @@ Analyze user-generated content and generate:
 
 ---
 
-## 📑 API Documentation
+## 📡 Available Documentation
+
+### Swagger UI
 
 ```text
 /api/docs/
+```
+
+### ReDoc
+
+```text
 /api/redoc/
+```
+
+### OpenAPI Schema
+
+```text
 /api/schema/
 ```
+
+---
+
+## 🧪 Testing
+
+Run automated tests:
+
+```bash
+python manage.py test
+```
+
+The project includes unit tests for the moderation engine and classification workflow.
 
 ---
 
@@ -169,10 +219,10 @@ Analyze user-generated content and generate:
 * Machine Learning Inference
 * Risk Assessment Systems
 * Content Moderation Pipelines
-* Data Persistence
+* PostgreSQL Persistence
 * API Documentation
 * Automated Testing
-* Backend Performance Monitoring
+* Scalable Backend Development
 
 ---
 
@@ -186,6 +236,7 @@ Analyze user-generated content and generate:
 * Cloud Deployment
 * Real-Time Moderation Dashboard
 * Model Versioning
+* Monitoring & Observability
 
 ---
 
@@ -193,6 +244,6 @@ Analyze user-generated content and generate:
 
 **Juan Diego Corella Camacho**
 
-Full Stack Developer | Telecommunications & Systems Engineering
+Full Stack Developer | Telecommunications & Software Engineering
 
-Focused on backend development, API design, artificial intelligence integration, and scalable software solutions.
+Passionate about backend development, scalable architectures, artificial intelligence integration, and modern API design.
