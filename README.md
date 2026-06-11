@@ -226,24 +226,9 @@ The project includes unit tests for the moderation engine and classification wor
 
 ---
 
-## 🚧 Future Improvements
-
-* JWT Authentication
-* Role-Based Access Control (RBAC)
-* Audit Logging
-* Docker Support
-* CI/CD Pipelines
-* Cloud Deployment
-* Real-Time Moderation Dashboard
-* Model Versioning
-* Monitoring & Observability
-
----
-
 ## 👨‍💻 Author
 
 **Juan Diego Corella Camacho**
 
 Full Stack Developer | Telecommunications & Software Engineering
 
-Passionate about backend development, scalable architectures, artificial intelligence integration, and modern API design.
