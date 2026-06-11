@@ -8,6 +8,7 @@ def evaluate_risk(scores):
 
     reasons = []
 
+    # Collect explanations
     if threat >= 0.50:
         reasons.append("Threat detected")
 
@@ -26,6 +27,7 @@ def evaluate_risk(scores):
     if identity_attack >= 0.50:
         reasons.append("Identity attack detected")
 
+    # Risk classification
     if threat >= 0.80:
         return {
             "risk_level": "CRITICAL",
