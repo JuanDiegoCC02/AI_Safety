@@ -1,14 +1,11 @@
 def evaluate_risk(scores):
+
     threat = scores.get("threat", 0.0)
     toxicity = scores.get("toxicity", 0.0)
     severe = scores.get("severe_toxicity", 0.0)
-    obscene = scores.get("obscene", 0.0)
-    insult = scores.get("insult", 0.0)
-    identity_attack = scores.get("identity_attack", 0.0)
 
     reasons = []
 
-    # Collect explanations
     if threat >= 0.50:
         reasons.append("Threat detected")
 
@@ -18,27 +15,25 @@ def evaluate_risk(scores):
     if severe >= 0.50:
         reasons.append("Severe toxic content detected")
 
-    if obscene >= 0.50:
-        reasons.append("Obscene language detected")
+    risk_score = (
+        threat * 0.5 +
+        toxicity * 0.3 +
+        severe * 0.2
+    )
 
-    if insult >= 0.50:
-        reasons.append("Insulting language detected")
-
-    if identity_attack >= 0.50:
-        reasons.append("Identity attack detected")
-
-    # Risk classification
-    if threat >= 0.80:
+    if risk_score >= 0.80:
         return {
+            "risk_score": round(risk_score, 2),
             "risk_level": "CRITICAL",
             "allowed": False,
             "report_generated": True,
-            "reason": "Critical threat detected",
+            "reason": "Critical content detected",
             "reasons": reasons
         }
 
-    if threat >= 0.50 or severe >= 0.70:
+    if risk_score >= 0.60:
         return {
+            "risk_score": round(risk_score, 2),
             "risk_level": "HIGH",
             "allowed": False,
             "report_generated": True,
@@ -46,16 +41,18 @@ def evaluate_risk(scores):
             "reasons": reasons
         }
 
-    if toxicity >= 0.50:
+    if risk_score >= 0.30:
         return {
+            "risk_score": round(risk_score, 2),
             "risk_level": "MEDIUM",
             "allowed": True,
             "report_generated": False,
-            "reason": "Potentially harmful content detected",
+            "reason": "Potentially harmful content",
             "reasons": reasons
         }
 
     return {
+        "risk_score": round(risk_score, 2),
         "risk_level": "LOW",
         "allowed": True,
         "report_generated": False,

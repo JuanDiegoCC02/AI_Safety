@@ -21,3 +21,17 @@ class ModerationResult(models.Model):
     report_generated = models.BooleanField(default=False)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+
+class IncidentReport(models.Model):
+    text = models.TextField()
+
+    risk_level = models.CharField(max_length=20)
+
+    reason = models.TextField()
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.risk_level} - {self.created_at}"
