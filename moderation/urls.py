@@ -10,4 +10,4 @@ urlpatterns = [
         ModerationResultListCreateView.as_view(),
         name='moderation'
     ),
-]
+] 
