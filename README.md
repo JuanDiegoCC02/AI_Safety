@@ -232,6 +232,79 @@ The project includes unit tests for the moderation engine and classification wor
 
 ---
 
+# 🔧 Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/JuanDiegoCC02/AI-Safety-Backend.git
+cd AI-Safety-Backend
+```
+
+## Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+## Activate Virtual Environment
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Configure Database
+
+Update PostgreSQL settings inside:
+
+```python
+settings.py
+```
+
+## Apply Migrations
+
+```bash
+python manage.py migrate
+```
+
+## Run Development Server
+
+```bash
+python manage.py runserver
+```
+
+Application available at:
+
+```text
+http://127.0.0.1:8000/
+```
+
+---
+
+# 🧪 Testing
+
+Run automated tests:
+
+```bash
+python manage.py test
+```
+
+---
+
 ## 👨‍💻 Author
 
 **Juan Diego Corella Camacho**
