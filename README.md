@@ -205,18 +205,6 @@ Generates moderation reports and incident records.
 
 ---
 
-## 🧪 Testing
-
-Run automated tests:
-
-```bash
-python manage.py test
-```
-
-The project includes unit tests for the moderation engine and classification workflow.
-
----
-
 ## 🎯 Engineering Concepts Demonstrated
 
 * REST API Design
