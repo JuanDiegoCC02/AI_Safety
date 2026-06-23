@@ -283,13 +283,15 @@ http://127.0.0.1:8000/
 
 ---
 
-# 🧪 Testing
+## 🧪 Testing
 
 Run automated tests:
 
 ```bash
 python manage.py test
 ```
+
+The project includes unit tests for the moderation engine and classification workflow.
 
 ---
 
