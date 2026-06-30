@@ -295,9 +295,9 @@ The project includes unit tests for the moderation engine and classification wor
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Credits
 
-**Juan Diego Corella Camacho**
+Author: **Juan Diego Corella Camacho**
 
-Full Stack Developer | Telecommunications & Software Engineering
+-Full Stack Developer | Telecommunications and Software Technician
 
